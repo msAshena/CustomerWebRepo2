@@ -1,0 +1,63 @@
+﻿@model CustomerWeb.Models.ViewModel.UploadResults
+
+@{
+    ViewBag.Title = "SendToAPI";
+}
+
+<h2>SendToAPI</h2>
+
+<div>
+    <h4>UploadResults</h4>
+    @if (!ViewBag.SuccessUpload)
+    {
+        <div class="alert alert-dismissible alert-danger">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <h4>Error!</h4>
+            <p>File Upload Failed</p>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-dismissible alert-success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <h4>Well done!</h4>
+            <p>File Upload Success</p>
+        </div>
+        <hr />
+    }
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FileName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FileName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RecordsCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecordsCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SuccessCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SuccessCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FaildCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FaildCount)
+        </dd>
+
+    </dl>
+</div>
+

@@ -1,0 +1,76 @@
+﻿@model IEnumerable<CustomerWeb.Models.CustomersInfo>
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search</h2>
+
+<p>
+    @using (Html.BeginForm("Search", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <input type="text" name="q" />
+        <input type="submit" name="Submit" id="Submit" value="Search" />
+    }
+</p>
+@if(Model != null) { 
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.customer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.value)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.file)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.action)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.property)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.added)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hash)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.errors)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.customer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.value)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.file)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.action)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.property)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.added)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hash)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.errors)
+        </td>
+       
+    </tr>
+}
+
+</table>
+}
