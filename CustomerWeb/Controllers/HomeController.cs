@@ -49,11 +49,25 @@ namespace CustomerWeb.Controllers
                     TempData["SuccessUpload"] = true;
                     TempData["ServerFileName"] = serverFileName;
                     TempData["FileName"] = fileName;
+
+                    return RedirectToAction("SendToAPIAsync");
+
                 }
+                else
+                {
+                    return RedirectToAction("Index");
+
+                }
+
             }
 
+            else
+            {
+                return RedirectToAction("Index");
 
-            return RedirectToAction("SendToAPIAsync");
+
+            }
+
         }
 
         public async Task<ActionResult> SendToAPIAsync()

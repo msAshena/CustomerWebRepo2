@@ -7,6 +7,15 @@
 
 @using (Html.BeginForm("Upload", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    <input type="file" name="file" />
+    <div>
+        Select the customers file(.csv)
+        <input type="file" name="file" />
+    </div>
+    <br/>
     <input type="submit" name="Submit" id="Submit" value="Upload" />
+    <br />
+    <br />
+    <br />
+
+
 }
